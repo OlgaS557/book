@@ -98,9 +98,11 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public AuthorDto removeAuthor(String authorName) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		authorRepository.deleteAuthor(authorName);
+		return modelMapper.map(authorName, AuthorDto.class);
 	}
 
 }

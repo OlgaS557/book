@@ -13,5 +13,6 @@ import lombok.Setter;
 @Setter
 public class AuthorDto {
 	String name;
-	LocalDate birthDate; 
+	LocalDate birthDate;
+
 }
